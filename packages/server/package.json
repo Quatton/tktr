@@ -1,6 +1,6 @@
 {
   "name": "@tktr/server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Server-side implementation of the Tickettier library",
   "repository": {
     "url": "git+https://github.com/Quatton/tktr.git"

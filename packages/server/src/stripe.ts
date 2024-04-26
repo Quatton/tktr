@@ -11,15 +11,18 @@ class TKTRResponse extends Response {
 
 type HandlerConfig<TStore extends Store, TItem extends Item, TStripe extends Stripe> = {
   stripe: TStripe
+
+  /** default is /api/tktr */
+  basePath?: string
   store: TStore
   items: TItem[]
 }
 
 export async function createTKTRStripeHandler<TStore extends Store, TItem extends Item, TStripe extends Stripe>(
-  { stripe, store, items }: HandlerConfig<TStore, TItem, TStripe>
+  { stripe, store, items, basePath = "/api/tktr" }: HandlerConfig<TStore, TItem, TStripe>
 ) {
   return async (request: Request) =>  {
-  const routeMatcher = /\/api\/tktr\/(.*)/
+  const routeMatcher = new RegExp(`${basePath}/(.*)`)
 
   const url = new URL(request.url)
 
