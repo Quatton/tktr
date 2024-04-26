@@ -5,8 +5,3 @@ export {
   storeFactory,
   itemsFactory,
 } from "./store"
-
-export {
-  createTKTRHandler,
-  TKTRError
-} from "./handler"
