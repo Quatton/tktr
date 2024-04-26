@@ -25,7 +25,11 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "types": "./dist/index.d.ts"
+    },
+    "./stripe": {
+      "import": "./dist/stripe.js",
+      "types": "./dist/stripe.d.ts"
     }
   },
   "author": "Quatton",
