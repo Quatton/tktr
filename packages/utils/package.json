@@ -1,14 +1,14 @@
 {
-  "name": "@tktr/core",
+  "name": "@tktr/utils",
   "version": "0.1.0",
-  "description": "Core library for Tickettier",
+  "description": "Utilities for the Tickettier library",
   "repository": {
     "url": "git+https://github.com/Quatton/tktr.git"
   },
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts"
+    "build": "tsup src/*.ts --format cjs,esm --dts"
   },
   "keywords": [
     "stripe",
@@ -33,5 +33,9 @@
   "devDependencies": {
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@stripe/stripe-js": "^3.3.0",
+    "stripe": "^15.4.0"
   }
 }

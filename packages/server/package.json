@@ -1,7 +1,7 @@
 {
   "name": "@tktr/server",
-  "version": "0.0.1",
-  "description": "Core library for Tickettier",
+  "version": "0.1.0",
+  "description": "Server-side implementation of the Tickettier library",
   "repository": {
     "url": "git+https://github.com/Quatton/tktr.git"
   },
@@ -36,13 +36,12 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "tsup": "^8.0.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "@tktr/core": "workspace:*",
+    "@tktr/utils": "workspace:*"
   },
   "peerDependencies": {
     "@stripe/stripe-js": "^3.3.0",
     "stripe": "^15.4.0"
-  },
-  "dependencies": {
-    "@tktr/core": "workspace:*"
   }
 }

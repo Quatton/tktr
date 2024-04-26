@@ -9,6 +9,8 @@
   ],
   "scripts": {
     "playground:dev": "bun run --filter playground -- dev",
-    "clean": "rm -rf packages/*/dist packages/*/node_modules playground/node_modules playground/bun.lockb packages/*/bun.lockb"
+    "clean": "rm -rf packages/*/dist packages/*/node_modules playground/node_modules playground/bun.lockb packages/*/bun.lockb",
+    "build:clean": "rm -rf packages/*/dist",
+    "build:all": "bun run build:clean && bun run --filter @tktr/* build"
   }
 }

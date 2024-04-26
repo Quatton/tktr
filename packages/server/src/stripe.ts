@@ -1,14 +1,8 @@
-import { formatAmountForStripe } from "@/utils/stripe-helper"
+
 import type { Item, Store } from "@tktr/core"
+import { formatAmountForStripe, TKTRError } from "@tktr/utils"
 import type { Stripe } from "stripe"
-import { TKTRError } from "./utils/error"
-
-export const get_event = ["purchase", "purchase.failed", "purchase.cancelled", "purchase.success"] as const
-export type GetEvent = typeof get_event[number]
-
-function getBaseUrl(origin: string, path: GetEvent) {
-  return `${origin}/api/tktr/${path}`
-}
+import { get_event, getBaseUrl, type GetEvent } from "."
 
 class TKTRResponse extends Response {
   constructor(json: any, init?: ResponseInit) {
@@ -36,7 +30,7 @@ export async function createTKTRStripeHandler<TStore extends Store, TItem extend
 
   const [_command, ...params] = route.split("/")
 
-  let command: typeof get_event[number] | undefined
+  let command: GetEvent | undefined
   if ((command = get_event.find((k) => k === _command)) === undefined) {
     return new TKTRError("INVALID_COMMAND").toResponse()
   }
