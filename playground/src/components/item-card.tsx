@@ -1,3 +1,4 @@
+import { tc } from "@/lib/tktr/client";
 import { formatAmountForDisplay, formatAmountForStripe } from "@/utils/stripe-helpers";
 
 export function ItemCard() {
@@ -17,7 +18,7 @@ export function ItemCard() {
         }
       </p>
 
-      <form className="flex justify-between mt-4" method="get" action="/api/tktr/purchase/item-1">
+      <form className="flex justify-between mt-4" method="get" action={tc.getPurchaseUrl("item-1")}>
         <button className="bg-zinc-800 text-white px-4 py-2 rounded-md hover:bg-zinc-800/80">
           Purchase
         </button>

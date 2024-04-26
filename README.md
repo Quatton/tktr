@@ -2,6 +2,8 @@
 
 Tickettier is an open-source wrapper for [Stripe](https://stripe.com/) (and hopefully other payment processors in the future!) that makes it easy to create and manage Stripe products and subscriptions as code. It is designed to be a single source of truth for your Stripe products and prices, and to make it easy to manage them in a version-controlled way.
 
+The name, project structure, and patterns are inspired by [tRPC](https://trpc.io/), despite with no features related to it.
+
 ## Table of Contents
 - [Tickettier](#tickettier)
   - [Table of Contents](#table-of-contents)

@@ -37,13 +37,11 @@
   "devDependencies": {
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "@tktr/core": "workspace:*",
-    "@tktr/utils": "workspace:*"
+    "@tktr/core": "workspace:*"
   },
   "peerDependencies": {
     "@stripe/stripe-js": "^3.3.0",
     "stripe": "^15.4.0",
-    "@tktr/core": "^0.1.0", 
-    "@tktr/utils": "^0.1.0"
+    "@tktr/core": "^0.1.0"
   }
 }
