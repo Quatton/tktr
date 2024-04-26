@@ -42,6 +42,8 @@
   },
   "peerDependencies": {
     "@stripe/stripe-js": "^3.3.0",
-    "stripe": "^15.4.0"
+    "stripe": "^15.4.0",
+    "@tktr/core": "^0.1.0", 
+    "@tktr/utils": "^0.1.0"
   }
 }
