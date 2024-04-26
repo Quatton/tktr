@@ -11,6 +11,7 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^2.7.0",
     "@stripe/stripe-js": "^3.3.0",
+    "@tktr/core": "workspace:*",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",

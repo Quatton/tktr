@@ -1,10 +1,7 @@
 import { stripe } from "@/lib/stripe"
-
-import { createTKTRHandler } from "./handler"
-import { storeFactory, itemsFactory } from "@/tktr/items"
+import { createTKTRHandler, itemsFactory, storeFactory } from "@tktr/core"
 
 export const store = storeFactory({ currency: 'usd' })
-
 
 export const items = itemsFactory([
   {
@@ -14,12 +11,13 @@ export const items = itemsFactory([
   }
 ])
 
-const { GET } = createTKTRHandler({
+const handler = createTKTRHandler({
   items,
   store,
   stripe 
 })
 
 export { 
-  GET
+  handler as GET,
+  handler as POST
 }

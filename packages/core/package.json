@@ -24,15 +24,18 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "author": "Quatton",
   "license": "Apache-2.0",
   "devDependencies": {
-    "bun-types": "^1.1.5",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@stripe/stripe-js": "^3.3.0",
+    "stripe": "^15.4.0"
   }
 }
