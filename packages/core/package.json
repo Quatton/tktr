@@ -1,0 +1,38 @@
+{
+  "name": "@tktr/core",
+  "version": "0.0.1",
+  "description": "Core library for Tickettier",
+  "repository": {
+    "url": "git+https://github.com/Quatton/tktr.git"
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "keywords": [
+    "stripe",
+    "ticket",
+    "wrapper",
+    "ecommerce",
+    "tier",
+    "subscription",
+    "event"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "author": "Quatton",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "bun-types": "^1.1.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}

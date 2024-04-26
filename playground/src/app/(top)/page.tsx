@@ -1,4 +1,3 @@
-import CheckoutForm from "@/components/checkout-form";
 import { ItemCard } from "@/components/item-card";
 
 export default function Home() {

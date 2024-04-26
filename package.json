@@ -1,0 +1,13 @@
+{
+  "name": "tktr-monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Monorepo for the tktr project",
+  "workspaces": [
+    "packages/*",
+    "playground"
+  ],
+  "scripts": {
+    "playground:dev": "bun run --filter playground -- dev"
+  }
+}

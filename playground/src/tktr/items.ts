@@ -1,17 +1,8 @@
 import Stripe from "stripe";
 
-export const store = storeFactory({ currency: 'usd' }).items([
-  {
-    id: "item-1",
-    name: "Item 1",
-    price: 1000,
-  }
-])
-
-
-export type BaseFactoryConfig = {
+export type BaseFactoryConfig = Readonly<{
   currency: string
-}
+}>
 
 export type Item = {
   id: string;
@@ -20,24 +11,12 @@ export type Item = {
   recurring?: Stripe.Checkout.SessionCreateParams.LineItem.PriceData.Recurring
 }
 
-export type Store = BaseFactoryConfig & { items: Item[]
+export type Store = BaseFactoryConfig
 
-  get_line_items: () => Stripe.Checkout.SessionCreateParams.LineItem[]
+export function storeFactory<TBase extends BaseFactoryConfig>(baseConfig: TBase) {
+  return baseConfig
+}
 
- } extends infer A ?{
-  [K in keyof A]: A[K]
-} : never
-
-function storeFactory<TBase extends BaseFactoryConfig>(baseConfig: TBase) {
-  return {
-    items: (_items: Item[]): Store => {
-    return {
-      ...baseConfig,
-      items: _items,
-
-      get_line_items: () => _items.map((item) => ({
-        
-      }))
-    }
-  }}
+export function itemsFactory<TItem extends Item>(items: TItem[]) {
+  return items
 }
